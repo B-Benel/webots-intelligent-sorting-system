@@ -1,5 +1,22 @@
-# webots-intelligent-sorting-system
+# 🤖 Webots Vision Sorting Line (YOLOv8)
 
+Ce projet simule un prototype "1rst Try" d'une ligne de tri industrielle automatisée utilisant **Webots** et **YOLOv8**. 
+Un Supervisor génère des objets (canettes, bouteilles), un robot de vision les identifie en temps réel, 
+et ils sont instantanément téléportés dans leurs bacs respectifs.
+
+## 🚀 Fonctionnement
+- **Spawn Dynamique** : Génération aléatoire d'objets sur un tapis roulant.
+- **Vision IA** : Détection via YOLOv8 (Ultralytics).
+- **Tri Instantané** : Téléportation vers les bacs cibles après détection.
+- **Communication** : Utilisation des Emitters/Receivers Webots.
+
+## 🛠️ Installation
+
+1. **Cloner le projet** :
+   ```bash
+   git clone [https://github.com/ton-pseudo/webots-vision-sorting-line.git](https://github.com/ton-pseudo/webots-vision-sorting-line.git)
+   cd webots-vision-sorting-line
+   
 Process : 
 
 <img width="379" height="399" alt="image" src="https://github.com/user-attachments/assets/8931e545-a24c-48a8-b6ae-506966b3513d" />
