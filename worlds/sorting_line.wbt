@@ -1,0 +1,97 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/WaterBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  fieldOfView 1
+  orientation -0.06298948432686063 0.2374757803999385 0.9693490488919234 1.6218165833157505
+  position 0.04551255052041023 -2.4452007925803354 1.519079991199264
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  children [
+    Receiver {
+    }
+  ]
+  name "SUPERVISOR"
+  controller "supervisor"
+  supervisor TRUE
+}
+Robot {
+  translation 0 0.6 0
+  children [
+    DistanceSensor {
+      rotation 0 0 1 -1.5708
+      name "sensor"
+      lookupTable [
+        0 0 0
+        1 1000 0
+      ]
+    }
+    Emitter {
+    }
+    Camera {
+      translation -0.01 0 0.3
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.1 0.05
+          }
+        }
+      ]
+      fieldOfView 1
+      width 416
+      height 416
+    }
+  ]
+  name "VISION"
+  controller "vision"
+}
+ConveyorBelt {
+  size 1.5 0.5 0.2
+  speed 0.1
+}
+Solid {
+  translation 0.8 -0.15 0.1
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Box {
+        size 0.3 0.1 0.3
+      }
+    }
+  ]
+  name "BIN_WATER"
+}
+Solid {
+  translation 0.8 0.2 0.1
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Box {
+        size 0.3 0.1 0.3
+      }
+    }
+  ]
+  name "BIN_SODA"
+}
