@@ -40,7 +40,7 @@ Assurez-vous d'utiliser **Python 3.9 ou 3.10**.
 Installez les dépendances nécessaires via le terminal :
 
 ```powershell
-pip install -r requirements.txt
+pip install -r requirements.txt ```
 
 ### 2. Mise en place sur Webots
 2.1 Ouvrir le monde
