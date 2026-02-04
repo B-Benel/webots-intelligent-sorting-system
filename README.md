@@ -52,12 +52,8 @@ Remplacez le dossier controllers de votre projet par celui fourni dans ce dépô
 Copiez le dossier models (contenant le fichier yolo26n.pt) depuis ce dépôt et collez-le à la racine de votre répertoire de projet Webots.
 
 📦 Structure du répertoire
-webots-vision-sorting-line/
-├── controllers/      # Dossier à remplacer dans votre projet Webots
-├── models/           # Contient le modèle YOLO (yolo26n.pt)
-├── worlds/           # Fichier monde (.wbt)
-├── requirements.txt  # Dépendances Python
-└── README.md
+
+<img width="480" height="124" alt="image" src="https://github.com/user-attachments/assets/06c37800-4a3f-47a7-a4f9-03c5a67e19e4" />
 
 Et voilà ! Vous êtes prêt·e à lancer la simulation.
 
