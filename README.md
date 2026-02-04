@@ -37,20 +37,18 @@ Dès réception du signal, le `Supervisor` exécute une translation instantanée
 ### 1. Environnement Python
 
 Assurez-vous d'utiliser **Python 3.9 ou 3.10**.  
-Installez les dépendances nécessaires via le terminal :
+Installez les dépendances nécessaires via le terminal : pip install -r requirements.txt
 
-```powershell
-pip install -r requirements.txt ```
 
 ### 2. Mise en place sur Webots
-2.1 Ouvrir le monde
+#### 2.1 Ouvrir le monde
 Lancez Webots et ouvrez le fichier présent dans worlds/sorting_line.wbt.
 
-2.2 Installer les contrôleurs
+#### 2.2 Installer les contrôleurs
 Par défaut, un projet Webots contient un dossier controllers.
 Remplacez le dossier controllers de votre projet par celui fourni dans ce dépôt Git.
 
-2.3 Ajouter le modèle IA
+#### 2.3 Ajouter le modèle IA
 Copiez le dossier models (contenant le fichier yolo26n.pt) depuis ce dépôt et collez-le à la racine de votre répertoire de projet Webots.
 
 📦 Structure du répertoire
@@ -60,6 +58,7 @@ webots-vision-sorting-line/
 ├── worlds/           # Fichier monde (.wbt)
 ├── requirements.txt  # Dépendances Python
 └── README.md
+
 Et voilà ! Vous êtes prêt·e à lancer la simulation.
 
 
