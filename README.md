@@ -1,20 +1,37 @@
-# 🤖 Webots Vision Sorting Line (YOLOv8)
+# Webots Automated Sorting System
 
-Ce projet simule un prototype "1rst Try" d'une ligne de tri industrielle automatisée utilisant **Webots** et **YOLOv8**. 
-Un Supervisor génère des objets (canettes, bouteilles), un robot de vision les identifie en temps réel, 
-et ils sont instantanément téléportés dans leurs bacs respectifs.
+Ce projet présente une preuve de concept (PoC) pour une ligne de tri industrielle automatisée intégrée dans l'environnement de simulation **Webots**. Le système repose sur l'architecture de détection en temps réel **YOLOv26** pour l'identification et la classification d'objets en mouvement.
 
-## 🚀 Fonctionnement
-- **Spawn Dynamique** : Génération aléatoire d'objets sur un tapis roulant.
-- <img width="1858" height="668" alt="image" src="https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16" />
+## Architecture du Système
 
-- **Vision IA** : Détection via YOLOv8 (Ultralytics).
-- <img width="1904" height="926" alt="image" src="https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3" />
+Le processus opérationnel est structuré autour d'une boucle de contrôle fermée impliquant trois composants principaux : la génération physique, la perception artificielle et l'actionneur logique.
 
-- **Tri Instantané** : Téléportation vers les bacs cibles après détection.
-<img width="1899" height="654" alt="image" src="https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4" />
+### 1. Génération et Flux de Matériaux (Spawn Dynamique)
 
-- **Communication** : Utilisation des Emitters/Receivers Webots.
+Le contrôleur `Supervisor` initialise la simulation en instanciant des objets (`WaterBottle` ou `Can`) de manière stochastique à l'origine du convoyeur. L'objet est soumis aux lois de la physique rigide (gravité et friction), lui permettant d'être entraîné par le tapis roulant vers la zone de détection.
+
+<img src="[https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16](https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16)" width="100%" alt="Processus de génération" />
+
+### 2. Perception et Analyse (Vision par Ordinateur)
+
+Lorsqu'un objet pénètre dans le champ d'action du capteur de proximité (`DistanceSensor`), le sous-système de vision est activé :
+
+* **Acquisition** : La caméra haute résolution capture une trame du flux vidéo.
+* **Inférence** : Le modèle YOLOv26 traite l'image pour extraire les caractéristiques morphologiques et assigner une classe de probabilité. (Object Detection mais on peut le faire via Image classification ...)
+* **Communication** : Le résultat (Water ou Soda) est encapsulé dans un paquet de données transmis via le protocole `Emitter/Receiver`.
+
+<img src="[https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3](https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3)" width="100%" alt="Inférence YOLOv8" />
+
+### 3. Logique de Tri et Réinitialisation (Actionnement)
+
+Dès réception du signal, le `Supervisor` exécute une translation instantanée des vecteurs de position de l'objet vers les bacs de collecte prédéfinis.
+
+* **Validation** : L'objet est maintenu dans le bac durant un intervalle défini pour confirmer la réussite du tri.
+* **Cycle** : Le nœud de l'objet est supprimé de l'arbre de scène avant qu'un nouveau cycle de génération ne soit amorcé, garantissant la pérennité des ressources de calcul de la simulation.
+
+<img src="[https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4](https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4)" width="100%" alt="Tri et téléportation" />
+
+
 
 ## 🛠️ Installation
 
@@ -23,9 +40,7 @@ et ils sont instantanément téléportés dans leurs bacs respectifs.
    git clone [https://github.com/ton-pseudo/webots-vision-sorting-line.git](https://github.com/ton-pseudo/webots-vision-sorting-line.git)
    cd webots-vision-sorting-line
    
-Process : 
-
-
+2 ...
 
 
 
