@@ -10,7 +10,7 @@ Le processus opérationnel est structuré autour d'une boucle de contrôle ferm�
 
 Le contrôleur `Supervisor` initialise la simulation en instanciant des objets (`WaterBottle` ou `Can`) de manière stochastique à l'origine du convoyeur. L'objet est soumis aux lois de la physique rigide (gravité et friction), lui permettant d'être entraîné par le tapis roulant vers la zone de détection.
 
-<img src="[https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16](https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16)" width="100%" alt="Processus de génération" />
+<img width="1858" height="668" alt="image" src="https://github.com/user-attachments/assets/46115cc1-dc81-44a4-b7c0-10ce4cdbdb16" />
 
 ### 2. Perception et Analyse (Vision par Ordinateur)
 
@@ -20,7 +20,7 @@ Lorsqu'un objet pénètre dans le champ d'action du capteur de proximité (`Dist
 * **Inférence** : Le modèle YOLOv26 traite l'image pour extraire les caractéristiques morphologiques et assigner une classe de probabilité. (Object Detection mais on peut le faire via Image classification ...)
 * **Communication** : Le résultat (Water ou Soda) est encapsulé dans un paquet de données transmis via le protocole `Emitter/Receiver`.
 
-<img src="[https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3](https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3)" width="100%" alt="Inférence YOLOv8" />
+<img width="1858" height="668" alt="image" src="https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3" />
 
 ### 3. Logique de Tri et Réinitialisation (Actionnement)
 
@@ -29,8 +29,7 @@ Dès réception du signal, le `Supervisor` exécute une translation instantanée
 * **Validation** : L'objet est maintenu dans le bac durant un intervalle défini pour confirmer la réussite du tri.
 * **Cycle** : Le nœud de l'objet est supprimé de l'arbre de scène avant qu'un nouveau cycle de génération ne soit amorcé, garantissant la pérennité des ressources de calcul de la simulation.
 
-<img src="[https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4](https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4)" width="100%" alt="Tri et téléportation" />
-
+<img width="1858" height="668" alt="image" src="https://github.com/user-attachments/assets/bdfe32b5-6d5c-4993-972e-9449169825f4" />
 
 
 ## 🛠️ Installation
