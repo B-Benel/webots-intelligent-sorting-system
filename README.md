@@ -20,7 +20,7 @@ Lorsqu'un objet pénètre dans le champ d'action du capteur de proximité (`Dist
 * **Inférence** : Le modèle YOLOv26 traite l'image pour extraire les caractéristiques morphologiques et assigner une classe de probabilité. (Object Detection mais on peut le faire via Image classification ...)
 * **Communication** : Le résultat (Water ou Soda) est encapsulé dans un paquet de données transmis via le protocole `Emitter/Receiver`.
 
-<img width="1858" height="668" alt="image" src="https://github.com/user-attachments/assets/101829d2-de16-47c4-bab4-a944beed78e3" />
+<img width="1858" height="668" alt="Sans titre" src="https://github.com/user-attachments/assets/8edbb2f0-18d2-4b05-a75b-f6d001ea5bf9" />
 
 ### 3. Logique de Tri et Réinitialisation (Actionnement)
 
